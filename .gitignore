@@ -1,0 +1,14 @@
+# 本地配置（含课程参数/会话 ID），不进仓库
+config.sh
+
+# 运行产物
+*.log
+batch.log
+*.png
+*.html
+obs*.txt
+quiz_*.txt
+
+# 系统
+.DS_Store
+Thumbs.db
