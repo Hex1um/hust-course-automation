@@ -2,7 +2,7 @@
 // 用法： bsk evaluate "$(cat treestat.js)" --tab-id $TAB --session $SESSION
 //
 // 返回 JSON 数组：
-//   ["1.1[DONE]582263 课程介绍", "1.2[PENDING]582264 ..."]
+//   ["1.1[DONE]100001 课程介绍", "1.2[PENDING]100002 ..."]
 //
 // ⚠️ 不要用 textContent 正则扫全树：父元素含后续章节"待完成"文字，会误报 PENDING。
 //    可靠判据：div#cur<chapterId> 内是否有 span.icon_Completed。

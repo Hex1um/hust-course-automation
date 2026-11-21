@@ -3,7 +3,7 @@
 # 用法： bash batch_run.sh <tabId> <chapterId1> <chapterId2> ...
 #
 # 建议放后台跑：
-#   bash batch_run.sh $TAB 582278 582279 ... &
+#   bash batch_run.sh $TAB 100001 100002 ... &
 # 然后每 ~2 分钟 tail 一次 batch.log 看 VERIFY 行
 
 set -u

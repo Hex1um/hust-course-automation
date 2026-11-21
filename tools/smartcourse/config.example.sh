@@ -6,7 +6,7 @@
 #
 # 地址栏形如：
 #   https://smartcourse.hust.edu.cn/mooc-smartcourse/mycourse/studentstudy
-#     ?chapterId=582278&courseId=111&clazzid=222&cpi=333&enc=abc&mooc2=1
+#     ?chapterId=100001&courseId=111&clazzid=222&cpi=333&enc=abc&mooc2=1
 #     &hidetype=0&openc=def
 
 export SC_COURSE_ID="<COURSE_ID>"

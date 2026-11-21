@@ -82,8 +82,21 @@ cd tools/smartcourse
 # 1) 从浏览器地址栏复制固定参数，填入 config.sh
 cp config.example.sh config.sh && vi config.sh
 # 2) 批量跑（chapterId 列表）
-bash batch_run.sh <tab_id> 582278 582279 582280
+bash batch_run.sh <tab_id> 100001 100002 100003
 ```
+
+### 2.5 不想自己动手？把提示词直接丢给 Agent
+
+`prompts/` 下有三份**自包含**的提示词模板，复制粘贴即可让任意具备 bsk 能力的 Agent 独立完成任务：
+
+| 模板 | 适用场景 |
+|---|---|
+| [`prompts/01-ulearning.md`](prompts/01-ulearning.md) | 优学习 / 思政类网课 |
+| [`prompts/02-smartcourse.md`](prompts/02-smartcourse.md) | 智慧课程 / 大学英语词汇课 |
+| [`prompts/03-generic-platform.md`](prompts/03-generic-platform.md) | 没见过的平台（教 Agent 自己逆向判据） |
+
+模板里已经内置：环境自检、完成判据、防错规则（不许并行 / 不许猜密码 / 练习先校验后提交）、
+异常处理表、以及**强制输出逐章验证表**。详见 [`prompts/README.md`](prompts/README.md)。
 
 ---
 
@@ -96,7 +109,13 @@ bash batch_run.sh <tab_id> 582278 582279 582280
 │   ├── 02-smartcourse.md        # 智慧课程：三层 iframe、1x 规则、quizdo 脚本详解
 │   ├── 03-bsk-environment.md    # bsk 环境、daemon 保活、evaluate/ref 的坑
 │   └── 04-pitfalls.md           # 故障速查总表
+├── prompts/
+│   ├── README.md                # 三份模板怎么选、占位符怎么填
+│   ├── 01-ulearning.md          # 优学习：可整段粘给 Agent 的任务提示词
+│   ├── 02-smartcourse.md        # 智慧课程：同上（含自包含脚本）
+│   └── 03-generic-platform.md   # 陌生平台：逆向方法论提示词
 ├── tools/
+│   ├── env.sh                   # 环境初始化（PATH / BSK_AUTO_START / SESSION）
 │   ├── ulearning/
 │   │   ├── watch_one.sh         # 单视频：倍速播放 + status 轮询
 │   │   ├── probe_status.js      # 读取当前页元素的 status / viewProgress / viewTime
@@ -111,6 +130,7 @@ bash batch_run.sh <tab_id> 582278 582279 582280
 │       ├── treestat.js          # 读取目录树完成状态（可信判据）
 │       ├── run_chapter.sh       # 单章流水线
 │       ├── batch_run.sh         # 多章批处理 + 逐章验证
+│       ├── finish_video.sh      # 超长视频/中断后续播补完
 │       └── README.md
 ├── LICENSE
 └── README.md

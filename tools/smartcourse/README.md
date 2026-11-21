@@ -28,10 +28,10 @@ vi config.sh     # 填 courseId / clazzid / cpi / enc / openc / session / tab
 
 ```bash
 # 单章
-bash run_chapter.sh 582278
+bash run_chapter.sh 100001
 
 # 多章（建议后台）
-bash batch_run.sh $SC_TAB_ID 582278 582279 582280
+bash batch_run.sh $SC_TAB_ID 100001 100002 100003
 tail -f batch.log | grep -E 'START|VERIFY|QUIZ'
 
 # 超长视频补播
