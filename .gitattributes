@@ -1,0 +1,4 @@
+# 统一换行，避免 Windows 拉取后 shell 脚本 / JS 出现 CRLF 问题
+* text=auto eol=lf
+*.sh text eol=lf
+*.js text eol=lf
